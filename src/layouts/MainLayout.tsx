@@ -4,17 +4,21 @@ import Header from "../components/layout/Header";
 
 const MainLayout = () => {
   return (
-    <div className="flex h-screen bg-[#010A10] text-white font-inter">
-      {/* Left Navbar */}
-      <Navbar />
+    <div className="flex h-screen bg-[#000810] text-white font-inter overflow-hidden">
+      {/* Fixed Left Sidebar */}
+      <div className="shrink-0 h-full p-8 hidden lg:block">
+        <Navbar />
+      </div>
 
-      {/* Right content */}
-      <div className="flex flex-col flex-1">
-        {/* Top Header */}
-        <Header />
+      {/* Main Content Area - takes remaining space */}
+      <div className="flex flex-col flex-1 min-w-0 h-full">
+        {/* Top Navigation */}
+        <div className="px-8 pt-8 shrink-0">
+          <Header />
+        </div>
 
-        {/* Page content */}
-        <main className="flex-1 overflow-y-auto p-6">
+        {/* Page Content - scrollable */}
+        <main className="flex-1 overflow-y-auto px-8 pb-8">
           <Outlet />
         </main>
       </div>

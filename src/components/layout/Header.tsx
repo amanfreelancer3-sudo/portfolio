@@ -1,54 +1,32 @@
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `no-underline px-[24px] py-[10px] rounded-[12px] text-[15px] font-medium transition-all duration-300 ${isActive
+      ? "bg-[#139BFD] text-white shadow-lg shadow-[#139BFD]/20"
+      : "bg-[#05131C] text-[#94A3B8] hover:text-white hover:bg-[#0F2231] border border-[#0F2231]"
+    }`;
+
   return (
-    <header className="flex bg-[#06131B] h-[65px] mt-[60px] text-[#D6D6D6] items-center gap-[15px] pl-[12px] mb-[30px]  border-[1px] border-[#0C1F2E] rounded-[10px]">
-      <NavLink
-        to="/"
-        end
-        className={({ isActive }) =>
-          `no-underline border-[1px] px-[13px] py-[5px] rounded-[8px] ${isActive ? "border-[#139BFD] text-[#139BFD]" : "border-[#0C1F2E] text-[#D6D6D6]"}`
-        }
-      >
+    <header className="flex bg-[#05131C] p-2 rounded-[16px] border border-[#0F2231] inline-flex mb-2">
+      <NavLink to="/" end className={linkClass}>
         About
       </NavLink>
-      <NavLink
-        to="/resume"
-        end
-        className={({ isActive }) =>
-          `no-underline border-[1px] px-[13px] py-[5px] rounded-[8px] ${isActive ? "border-[#139BFD] text-[#139BFD]" : "border-[#0C1F2E] text-[#D6D6D6]"}`
-        }
-      >
+      <div className="w-2"></div>
+      <NavLink to="/resume" end className={linkClass}>
         Resume
       </NavLink>
-
-      <NavLink
-        to="/portfolio"
-        end
-        className={({ isActive }) =>
-          `no-underline border-[1px] px-[13px] py-[5px] rounded-[8px] ${isActive ? "border-[#139BFD] text-[#139BFD]" : "border-[#0C1F2E] text-[#D6D6D6]"}`
-        }
-      >
+      <div className="w-2"></div>
+      <NavLink to="/portfolio" end className={linkClass}>
         Portfolio
       </NavLink>
-
-      <NavLink
-        to="/skills"
-        end
-        className={({ isActive }) =>
-          `no-underline border-[1px] px-[13px] py-[5px] rounded-[8px] ${isActive ? "border-[#139BFD] text-[#139BFD]" : "border-[#0C1F2E] text-[#D6D6D6]"}`
-        }
-      >
+      <div className="w-2"></div>
+      <NavLink to="/skills" end className={linkClass}>
         Skills
       </NavLink>
-      <NavLink
-        to="/testimonial"
-        end
-        className={({ isActive }) =>
-          `no-underline border-[1px] px-[13px] py-[5px] rounded-[8px] ${isActive ? "border-[#139BFD] text-[#139BFD]" : "border-[#0C1F2E] text-[#D6D6D6]"}`
-        }
-      >
-        Testimonials
+      <div className="w-2"></div>
+      <NavLink to="/testimonial" end className={linkClass}>
+        Testimonial
       </NavLink>
     </header>
   );

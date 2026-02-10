@@ -28,32 +28,34 @@ const Skills = () => {
   ];
 
   return (
-    <div className="bg-[#010A10] text-[#FFFFFF] inline-block">
-      <div className="text-[#D6D6D6] text-[14px] flex justify-center inline-block bg-[#06131B] px-[8px] py-[3px] border-[1px] border-[#0C1F2E] rounded-[5px]">
-        Skillset
+    <div className="font-poppins">
+      {/* Badge */}
+      <div className="inline-block mb-4">
+        <span className="text-[#94A3B8] text-[13px] font-medium tracking-wide uppercase">
+          Skillset
+        </span>
+        <div className="h-[2px] w-12 bg-[#139BFD] mt-1"></div>
       </div>
-      <h1 className="text-[24px] font-bold">My Skills</h1>
-      <div className="grid grid-cols-2 gap-[20px] mb-[20px]">
+
+      <h1 className="text-[36px] font-bold text-white mb-8">My Skills</h1>
+
+      {/* Skills Grid */}
+      <div className="grid grid-cols-2 gap-6 pb-6">
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className="mb-[20px] inline-block bg-[#06131B] rounded-[10px] p-[15px]"
+            className="bg-[#05131C] rounded-[20px] p-8 border border-[#0F2231] hover:border-[#139BFD]/30 transition-all duration-300"
           >
-            <h2 className="text-[18px] font-semibold mb-[25px]">
+            <h2 className="text-white text-[20px] font-bold mb-6">
               {skill.title}
             </h2>
-            <p
-              className="h-[1px]
-  bg-gradient-to-r
-  from-[#139BFD]
-  via-white/60
-  to-[#139BFD]"
-            ></p>
-            <div className="flex flex-wrap gap-[10px]">
+
+            {/* Skill Tags */}
+            <div className="flex flex-wrap gap-3">
               {skill.skills.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-[12px] bg-[#0C1F2E] px-[12px] py-[5px] rounded-[10px] justify-center items-center text-[#D6D6D6]"
+                  className="text-[13px] bg-[#0F2231] text-[#94A3B8] border border-[#1E293B] px-4 py-2 rounded-lg hover:text-white hover:border-[#139BFD] transition-colors duration-300 cursor-default"
                 >
                   {tech}
                 </span>

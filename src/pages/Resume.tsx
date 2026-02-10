@@ -3,106 +3,98 @@ const Resume = () => {
     {
       id: 1,
       title: "Jr. Web Developer",
-      company: "Google",
-      startDate: "2022",
-      endDate: "2023",
+      dates: "2022–2023",
       description:
-        "Built responsive websites, integrated databases, and supported backend features. Learned clean code, debugging, and performance optimization while collaborating with senior developers.",
+        "Built Responsive Websites, Integrated Databases, And Supported Backend Features. Learned Clean Code, Debugging, And Performance Optimization While Collaborating With Senior Developers.",
     },
     {
       id: 2,
-      title: "Fullstack Developer",
-      company: "Facebook",
-      startDate: "2023",
-      endDate: "2026",
+      title: "Full Stack Developer",
+      dates: "2023–2026",
       description:
-        "Led end-to-end development of scalable web apps, designed APIs and microservices, and optimized performance for high-traffic platforms. Worked closely with product and design teams on user-focused solutions.",
+        "Led End-To-End Development Of Scalable Web Apps, Designed APIs And Microservices, And Optimized Performance For High-Traffic Platforms. Worked Closely With Product And Design Teams On User-Focused Solutions.",
     },
   ];
 
   const industries = [
-    {
-      id: 1,
-      title: "",
-      description: "SaaS & Tech Startups",
-    },
-    {
-      id: 2,
-      title: "",
-      description: "Data, Analytics & AI Platforms",
-    },
-    {
-      id: 3,
-      title: "",
-      description: "Web3 & Blockchain",
-    },
-    {
-      id: 4,
-      title: "",
-      description: "Media & Entertainment Tech",
-    },
+    "SaaS & Tech Startups",
+    "Data, Analytics & AI Platforms",
+    "Web3 & Blockchain",
+    "Media & Entertainment Tech",
   ];
 
   const expertise = [
-    {
-      id: 1,
-      title: "",
-      description: "Business Automation & Enterprise Tools",
-    },
-    {
-      id: 2,
-      title: "",
-      description: "FinTech & Payment Platforms",
-    },
-    {
-      id: 3,
-      title: "",
-      description: "Real-Time & Communication Systems",
-    },
-    {
-      id: 4,
-      title: "",
-      description: "High-Performance Backend Platforms",
-    },
+    "Business Automation & Enterprise Tools",
+    "FinTech & Payment Platforms",
+    "Real-Time & Communication Systems",
+    "High-Performance Backend Platforms",
   ];
 
   return (
-    <div className="text-[#FFFFFF]">
-      <div className="text-[#D6D6D6] text-[14px] flex justify-center inline-block bg-[#06131B] px-[10px] py-[5px] border-[1px] border-[#0C1F2E] rounded-[5px] ">
-        Experience
+    <div className="font-poppins">
+      {/* Badge */}
+      <div className="inline-block mb-4">
+        <span className="text-[#94A3B8] text-[13px] font-medium tracking-wide uppercase">
+          Resume
+        </span>
+        <div className="h-[2px] w-12 bg-[#139BFD] mt-1"></div>
       </div>
-      <h1 className="">My Experience</h1>
-      <div className="grid grid-cols-2 gap-[20px] mb-[20px]">
+
+      <h1 className="text-[36px] font-bold text-white mb-8">My Experience</h1>
+
+      {/* Experience Cards */}
+      <div className="grid grid-cols-2 gap-6 mb-12">
         {experience.map((exp) => (
           <div
             key={exp.id}
-            className="text-[#FFFFFF] border-[1px] border-[#0C1F2E] rounded-[10px] p-[15px] bg-[#06131B] "
+            className="bg-[#05131C] border border-[#0F2231] rounded-[20px] p-8 hover:border-[#139BFD]/30 transition-all duration-300"
           >
-            <h3>{exp.title}</h3>
-            <p>
-              {exp.startDate} - {exp.endDate}
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-white text-[20px] font-bold">{exp.title}</h3>
+              <span className="text-[#139BFD] bg-[#139BFD]/10 px-3 py-1 rounded-full text-[13px] font-medium">
+                {exp.dates}
+              </span>
+            </div>
+            <p className="text-[#94A3B8] text-[14px] leading-7">
+              {exp.description}
             </p>
-            <p className="text-[#D6D6D6]">{exp.description}</p>
           </div>
         ))}
       </div>
-      <div>Experience</div>
-      <h1>Industries I served</h1>
 
-      <div className="grid grid-cols-2 gap-[20px] mb-[20px] text-[#D6D6D6] border-[1px] border-[#0C1F2E] rounded-[10px] p-[15px] bg-[#06131B] mb-[15px]">
+      {/* Industries Badge */}
+      <div className="inline-block mb-4">
+        <span className="text-[#94A3B8] text-[13px] font-medium tracking-wide uppercase">
+          Industries
+        </span>
+        <div className="h-[2px] w-12 bg-[#139BFD] mt-1"></div>
+      </div>
+
+      <h1 className="text-[30px] font-bold text-white mb-8">Industries I Served</h1>
+
+      {/* Industries Grid */}
+      <div className="grid grid-cols-2 gap-8 bg-[#05131C] border border-[#0F2231] rounded-[24px] p-8 mb-8">
         <div>
-          {industries.map((industry) => (
-            <ul className="list-disc pl-[15px]">
-              <li className="">{industry.description}</li>
-            </ul>
-          ))}
+          <h4 className="text-white font-semibold mb-4 text-[18px]">Domains</h4>
+          <ul className="space-y-3">
+            {industries.map((industry, index) => (
+              <li key={index} className="text-[#94A3B8] text-[15px] flex items-center gap-3">
+                <span className="w-1.5 h-1.5 bg-[#139BFD] rounded-full"></span>
+                {industry}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
-          {expertise.map((industry) => (
-            <ul className="list-disc pl-[15px] ">
-              <li className="">{industry.description}</li>
-            </ul>
-          ))}
+          <h4 className="text-white font-semibold mb-4 text-[18px]">Expertise</h4>
+          <ul className="space-y-3">
+            {expertise.map((item, index) => (
+              <li key={index} className="text-[#94A3B8] text-[15px] flex items-center gap-3">
+                <span className="w-1.5 h-1.5 bg-[#139BFD] rounded-full"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

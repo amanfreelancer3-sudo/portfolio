@@ -3,52 +3,71 @@ const Testimonials = () => {
     {
       id: 1,
       feedback:
-        "Aman transformed our prediction platform with lightning-fast performance. His multithreading solution processed 70,000 records in just 40 seconds, plus the Kafka microservices setup handles peak loads effortlessly. He's a real problem-solver who delivers under pressure.",
+        "Aman Transformed Our Prediction Platform With Lightning-Fast Performance. His Multithreading Solution Processed 70,000 Records In Just 40 Seconds, Plus The Kafka Microservices Setup Handles Peak Loads Effortlessly. He's A Real Problem-Solver Who Delivers Under Pressure.",
       stars: 5,
     },
     {
       id: 2,
       feedback:
-        "Aman built robust MERN applications that cut our page load times dramatically through smart optimizations. His API integrations and MongoDB tuning boosted our entire workflow. Reliable, skilled, and always thinking ahead.",
+        "Aman Built Robust MERN Applications That Cut Our Page Load Times Dramatically Through Smart Optimizations. His API Integrations And MongoDB Tuning Boosted Our Entire Workflow. Reliable, Skilled, And Always Thinking Ahead.",
       stars: 5,
     },
     {
       id: 3,
       feedback:
-        "The contract system Aman created for our music platform is flawless. Dynamic updates and secure e-signatures saved us countless hours. His full-stack expertise made complex features feel simple and intuitive.",
+        "The Contract System Aman Created For Our Music Platform Is Flawless. Dynamic Updates And Secure E-Signatures Saved Us Countless Hours. His Full-Stack Expertise Made Complex Features Feel Simple And Intuitive.",
       stars: 5,
     },
     {
       id: 4,
       feedback:
-        "Aman's payment gateway and role-based admin panel exceeded our expectations. The JWT auth and analyst workflow streamlined our operations perfectly. He's the go-to developer for Web3 projects that need to scale fast.",
+        "Aman's Payment Gateway And Role-Based Admin Panel Exceeded Our Expectations. The JWT Auth And Analyst Workflow Streamlined Our Operations Perfectly. He's The Go-To Developer For Web3 Projects That Need To Scale Fast.",
       stars: 5,
     },
   ];
 
   return (
-    <div className="bg-[#010A10] text-[#FFFFFF] inline-block">
-      <div className="text-[#D6D6D6] text-[14px] flex justify-center inline-block bg-[#06131B] px-[8px] py-[3px] border-[1px] border-[#0C1F2E] rounded-[5px]">
-        Testimonials
+    <div className="font-poppins">
+      {/* Badge */}
+      <div className="inline-block mb-4">
+        <span className="text-[#94A3B8] text-[13px] font-medium tracking-wide uppercase">
+          Testimonials
+        </span>
+        <div className="h-[2px] w-12 bg-[#139BFD] mt-1"></div>
       </div>
-      <h1 className="text-[24px] font-bold mb-[40px]">
-        Here’s What My Clients Say
+
+      <h1 className="text-[36px] font-bold text-white mb-8">
+        Here's What My Clients Say
       </h1>
-      <div className="grid grid-cols-2 gap-[15px]">
+
+      {/* Testimonials Grid */}
+      <div className="grid grid-cols-2 gap-6 pb-6">
         {feedbacks.map((feedback) => (
           <div
             key={feedback.id}
-            className="mb-[20px] inline-block bg-[#06131B] rounded-[10px] p-[15px]"
+            className="bg-[#05131C] rounded-[20px] p-8 border border-[#0F2231] hover:border-[#139BFD]/30 transition-all duration-300 relative"
           >
-            <p className="text-[16px] text-[#D6D6D6]">{feedback.feedback}</p>
-            <div className="flex mt-[30px] justify-start gap-[3px]">
-              {[...Array(feedback.stars)].map((_, i) => (
-                <span key={i} className="text-[#FFD700]">
-                  ★
-                </span>
-              ))}
+            {/* Quote Icon */}
+            <div className="absolute top-6 right-8 text-[#1E293B] text-[40px] font-serif leading-none select-none">
+              "
             </div>
-            <p className="text-[14px]">{"Client FeedBack"}</p>
+
+            <p className="text-[#94A3B8] text-[15px] leading-7 relative z-10 italic">
+              "{feedback.feedback}"
+            </p>
+
+            <div className="mt-6 pt-6 border-t border-[#0F2231] flex justify-between items-center">
+              <div>
+                <p className="text-white text-[14px] font-bold">Client FeedBack</p>
+                <div className="flex mt-1 gap-1">
+                  {[...Array(feedback.stars)].map((_, i) => (
+                    <span key={i} className="text-[#FFD700] text-[14px]">
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>

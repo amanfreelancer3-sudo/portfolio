@@ -1,4 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+    body {
+        @apply bg-[#000810] text-white font-inter antialiased;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-[#000810];
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-[#139BFD]/20 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-[#139BFD]/40;
+    }
+}
