@@ -9,7 +9,7 @@ const Navbar = () => {
           <img
             src={ProfilePhoto}
             alt="Aman Singh"
-            className="w-full h-full object-cover scale-[1.35] translate-y-2"
+            className="w-full h-full object-cover scale-[1.35] translate-y-2 translate-x-2"
           />
         </div>
       </div>
@@ -27,7 +27,10 @@ const Navbar = () => {
       {/* Tech Stack */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
         {["MERN", "NestJs", "Microservices"].map((tech) => (
-          <span key={tech} className="text-[#94A3B8] text-[12px] bg-[#0F2231] px-2 py-1 rounded-md">
+          <span
+            key={tech}
+            className="text-[#94A3B8] text-[12px] bg-[#0F2231] px-2 py-1 rounded-md"
+          >
             {tech}
           </span>
         ))}
