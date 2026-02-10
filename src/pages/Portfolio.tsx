@@ -9,6 +9,7 @@ const Portfolio = () => {
       id: 1,
       title: "TalkStack AI",
       image: talkStackImage,
+      link: "https://www.talkstack.ai/",
       skills: [
         "Node.js",
         "React",
@@ -30,6 +31,7 @@ const Portfolio = () => {
       id: 2,
       title: "Street Smart",
       image: streetSmartImage,
+      link: "https://streetsmartcareers.com/",
       skills: ["Node.js", "React", "Express", "MongoDB"],
       descriptions: [
         "Full-Stack Web Application For Managing Music Projects And Generating Legally Binding Contracts",
@@ -42,6 +44,7 @@ const Portfolio = () => {
       id: 3,
       title: "Moonrig",
       image: moonrigImage,
+      link: "https://moonrig.io/",
       skills: ["Node.js", "React", "Express", "MongoDB"],
       descriptions: [
         "Full-Stack Platform For Web3 Project Reviews And Analyst Evaluation",
@@ -55,6 +58,7 @@ const Portfolio = () => {
       id: 4,
       title: "Askyogi",
       image: askyogiImage,
+      link: "https://www.askyogi.live/",
       skills: ["NestJS", "Kafka", "Redis", "MongoDB"],
       descriptions: [
         "Scalable Prediction Platform Using NestJS And Fastify",
@@ -84,22 +88,40 @@ const Portfolio = () => {
         {portfolio.map((project) => (
           <div
             key={project.id}
-            className="flex bg-[#05131C] rounded-[24px] overflow-hidden border border-[#0F2231] hover:border-[#139BFD]/50 transition-all duration-300 group"
+            className="flex bg-[#05131C] rounded-[24px] overflow-hidden border border-[#0F2231] hover:border-[#139BFD]/50 transition-all duration-300 group relative"
           >
             {/* Image - Fixed Width */}
-            <div className="w-[360px] shrink-0 overflow-hidden">
+            <div className="w-[360px] shrink-0 overflow-hidden relative">
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
+              {/* Overlay link for image */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10"
+                aria-label={`Visit ${project.title}`}
+              ></a>
             </div>
 
             {/* Content */}
             <div className="p-8 flex-1">
-              <h2 className="text-white text-[22px] font-bold mb-4">
-                {project.title}
-              </h2>
+              <div className="flex justify-between items-start mb-4">
+                <h2 className="text-white text-[22px] font-bold">
+                  {project.title}
+                </h2>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#139BFD] text-[14px] font-medium hover:underline flex items-center gap-1"
+                >
+                  Visit Site ↗
+                </a>
+              </div>
 
               {/* Skills */}
               <div className="flex flex-wrap gap-2 mb-6">
