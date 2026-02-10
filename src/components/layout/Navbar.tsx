@@ -5,11 +5,11 @@ const Navbar = () => {
     <aside className="w-[300px] bg-[#05131C] flex flex-col items-center py-10 px-6 rounded-[24px] h-full border border-[#0F2231] shadow-xl relative overflow-hidden">
       {/* Profile Photo */}
       <div className="relative mb-6">
-        <div className="w-[160px] h-[160px] rounded-[20px] overflow-hidden border-4 border-[#0F2231]">
+        <div className="w-[160px] h-[160px] rounded-[20px] overflow-hidden border-4 border-[#0F2231] bg-white flex items-center justify-center">
           <img
             src={ProfilePhoto}
             alt="Aman Singh"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-[1.35] translate-y-2"
           />
         </div>
       </div>
